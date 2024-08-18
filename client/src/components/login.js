@@ -16,7 +16,7 @@ export default function Login() {
      let data={email:email.current.value,
                password:password.current.value}
       try{
-        let res=await axios.post('http://localhost:5000/user/login',data);
+        let res=await axios.post('https://devbook-uexa.onrender.com/user/login',data);
         res=res.data;
         delete data.password;
         data.name=res.data.name;

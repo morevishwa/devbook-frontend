@@ -19,7 +19,7 @@ export default function Chat() {
         message: message.current.value,
         token: user.token
       };
-      axios.post('http://localhost:5000/post/new',data).catch((err)=>{
+      axios.post('https://devbook-uexa.onrender.com/post/new',data).catch((err)=>{
         alert('try again');
       });
       message.current.value='';
@@ -36,7 +36,7 @@ export default function Chat() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        let response = await axios.post('http://localhost:5000/post/all', { token: user.token });
+        let response = await axios.post('https://devbook-uexa.onrender.com/post/all', { token: user.token });
         response=response.data;
         dispatch({type:'SETPOSTS',payload:response});
       } catch (error) {

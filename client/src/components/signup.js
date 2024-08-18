@@ -14,7 +14,7 @@ export default function Signup() {
                         email:document.getElementById('email').value,
                         password:document.getElementById('password').value}
           try{
-            let res=await axios.post('http://localhost:5000/user/new',userdata);
+            let res=await axios.post('https://devbook-uexa.onrender.com/user/new',userdata);
             res=res.data;
             console.log(res);
             delete userdata.password;
